@@ -16,7 +16,7 @@ clean:
 	rm -f $(OBJ)
 	rm -f $(TARGET)
 
-install: $(TARGET)
+install: all
 	mkdir -p $(PREFIX)/lib
 	mkdir -p $(PREFIX)/include
 	cp -f $(TARGET) $(PREFIX)/lib
