@@ -3,6 +3,8 @@ SRC = factorial.c
 OBJ = libfact.o
 TARGET = libfact.a
 HEADER = libfact.h
+PREFIX=/usr/local
+
 
 all:$(SRC)
 	$(CC) $(SRC) -c -o $(OBJ)
