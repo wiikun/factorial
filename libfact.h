@@ -1,0 +1,1 @@
+extern long long factorial(int base,int step);
