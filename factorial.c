@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-long long factorial(int base,int step){
-    if(step <= 0) {//stepが0orマイナスの時例外を出す
-        fprintf(stderr,"step is plus\n");
+long long factorial(int base ,int step)
+{
+    if(step < 1){
+        fprintf(stderr,"Error! factorial step must be positive.\n");
         exit(1);
     }
 
-    if(base <= 0){//もし0orそれより小さいなら1を返す
-        return 1;
-    } else {
-        return base * factorial(base - step,step);//違えばbaseとbase-stepの階乗を返す
+    if(base < 1){
+        fprintf(stderr,"Error! factorial base must be positive.\n");
+        exit(1);
     }
+
+    long long result = 1;
+    for(int basevar = base;basevar > 1;result *= basevar,basevar -= step);
+    return result;
 }
